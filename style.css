@@ -19,7 +19,7 @@
         padding: 30px 40px;
         border-radius: 12px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        width: 350px;
+        width: 30%;
         text-align: center;
     }
 
@@ -76,3 +76,33 @@
     #resultado p {
         margin-bottom: 5px;
     }
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+footer a {
+    color: #1cc88a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.autor-link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1cc88a;
+}
+
+.autor-link::after {
+    content: " ↗";
+    font-size: 0.9em;
+}
