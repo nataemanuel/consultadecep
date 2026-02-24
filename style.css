@@ -19,7 +19,7 @@
         padding: 30px 40px;
         border-radius: 12px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        width: 30%;
+        width: 400px;
         text-align: center;
     }
 
@@ -105,4 +105,5 @@ footer a:hover {
 .autor-link::after {
     content: " ↗";
     font-size: 0.9em;
+
 }
