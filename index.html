@@ -1,66 +1,24 @@
- <!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta CEP - ViaCEP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de CNPJS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Consulta CEP - ViaCEP</h1>
-        <input type="text" id="cep" placeholder="Digite o CEP (8 dígitos)">
-        <button onclick="buscarCEP()">Buscar</button>
-        <div id="resultado"></div>
-    </div>
 
-    <script>
-        function buscarCEP() {
-                 {
-    const cep = document.getElementById('cep').value;
-    const resultadoDiv = document.getElementById('resultado');
+  <div class="container">
+    <h1>Consultar CNPJs</h1>
+    
+    <label for="cnpj">Digite o CNPJ: </label>
+    <input type="text" id="cnpj" maxlength="18" placeholder="Ex: 12.345.678/0001-95" oninput="formatarCNPJ()">
+    
+    <button onclick="consultarCNPJ()">Consultar</button>
 
-    // Construir a URL da API ViaCEP
-    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    <div id="result"></div>
+  </div>
 
-    // Fazer a requisição usando fetch
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.erro) {
-                resultadoDiv.innerHTML = '<p style="color: red;">CEP não encontrado.</p>';
-            } else {
-                resultadoDiv.innerHTML = `
-                    <p><strong>CEP:</strong> ${data.cep}</p>
-                    <p><strong>Logradouro:</strong> ${data.logradouro}</p>
-                    <p><strong>Bairro:</strong> ${data.bairro}</p>
-                    <p><strong>Cidade:</strong> ${data.localidade}</p>
-                    <p><strong>Estado:</strong> ${data.uf}</p>
-                `;
-            }
-        })
-        .catch(error => {
-            resultadoDiv.innerHTML = `<p style="color: red;">Erro ao buscar CEP: Digite um CEP valido</p>`;
-        });
-}
-
-        }
-    </script>
-    <footer>
-    <p>
-        © 2026 - Consulta de CEP |
-        Desenvolvido por 
-        <a href="https://www.instagram.com/nattannemanuel/" 
-           target="_blank" 
-           class="autor-link">
-           Natã Emanuel
-        </a>
-    </p>
-</footer>
+  <script src="script.js"></script>
 </body>
 </html>
